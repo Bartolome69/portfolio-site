@@ -19,7 +19,7 @@ function HomePage() {
       <div className="max-w-5xl mx-auto px-5 lg:px-8 py-12 lg:py-16">
         <div className="flex gap-16">
           <DesktopSidebar />
-          <main className="min-w-0 max-w-2xl flex-1 space-y-16">
+          <main className="min-w-0 max-w-2xl flex-1 space-y-16 lg:border-l lg:border-accent/20 lg:pl-12">
             <IntroSection />
             <NowSection />
             <WorkSection />

@@ -10,28 +10,58 @@ import {
 function SectionHeading({
   id,
   children,
+  right,
 }: {
   id: string;
   children: React.ReactNode;
+  right?: React.ReactNode;
 }) {
   return (
     <div id={id} className="scroll-mt-24">
-      <h2 className="font-serif-display text-lg tracking-tight text-ink mb-8 pb-3 border-b border-rule">
-        {children}
-      </h2>
+      <div className="flex items-baseline justify-between gap-4 mb-8 pb-3 border-b border-rule">
+        <h2 className="font-serif-display text-lg font-medium tracking-tight text-ink">
+          {children}
+        </h2>
+        {right && (
+          <span className="text-sm text-ink-muted flex-shrink-0">{right}</span>
+        )}
+      </div>
     </div>
   );
 }
 
 export function IntroSection() {
   return (
-    <section className="space-y-4">
-      <SectionHeading id="intro">{intro.heading}</SectionHeading>
-      {intro.paragraphs.map((p, i) => (
-        <p key={i} className="text-[15px] leading-relaxed text-ink/90">
-          {p}
-        </p>
-      ))}
+    <section className="space-y-5">
+      <h2
+        id="intro"
+        className="scroll-mt-24 font-serif-display text-4xl font-medium tracking-tight text-ink"
+      >
+        {intro.greeting}
+      </h2>
+      <p className="text-[15px] leading-relaxed text-ink/90">
+        I'm Bart. I lead delivery at{" "}
+        <a
+          href="https://planes.agency"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-ink underline underline-offset-3 decoration-ink/30 hover:decoration-ink transition-colors"
+        >
+          Planes
+        </a>
+        , a London product studio, working across client projects in fintech,
+        healthtech, and hospitality. On the side I build things — apps,
+        websites, and AI tools — for myself and a small number of clients.
+      </p>
+      <p className="text-[15px] leading-relaxed text-ink/90">
+        I'm interested in software for small communities, tools that help teams
+        ship faster, and how AI is changing what one person can build. New
+        Zealand citizen, London-based, runs with a club somewhere in zone 2.
+      </p>
+      <p className="text-[15px] leading-relaxed text-ink/90">
+        Currently taking on 1–2 small projects per quarter — websites and
+        lightweight apps for independent businesses, and AI workflow consulting.
+      </p>
     </section>
   );
 }
@@ -39,13 +69,15 @@ export function IntroSection() {
 export function NowSection() {
   return (
     <section className="space-y-4">
-      <SectionHeading id="now">{now.heading}</SectionHeading>
-      <p className="text-xs uppercase tracking-widest text-ink-muted -mt-2 mb-3">
-        {now.subheading}
-      </p>
+      <SectionHeading id="now" right={now.subheading}>
+        {now.heading}
+      </SectionHeading>
       <ul className="space-y-2.5">
         {now.items.map((item, i) => (
-          <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-ink/90">
+          <li
+            key={i}
+            className="flex items-start gap-3 text-[15px] leading-relaxed text-ink/90"
+          >
             <span className="mt-2 size-1.5 rounded-full bg-accent flex-shrink-0" />
             {item}
           </li>
@@ -97,9 +129,7 @@ export function ContactSection() {
   return (
     <section className="space-y-4">
       <SectionHeading id="contact">{contact.heading}</SectionHeading>
-      <p className="text-[15px] leading-relaxed text-ink/90">
-        {contact.body}
-      </p>
+      <p className="text-[15px] leading-relaxed text-ink/90">{contact.body}</p>
       <div className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
         <a
           href={`mailto:${siteConfig.email}`}

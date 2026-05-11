@@ -10,16 +10,13 @@ export const siteConfig = {
 } as const;
 
 export const bio = {
-  tagline: "Delivery lead at Planes.\nIndependent builder.\nLondon · New Zealand.",
+  tagline:
+    "Delivery lead at Planes.\nIndependent builder.\nLondon · New Zealand.",
 } as const;
 
 export const intro = {
+  greeting: "Hello.",
   heading: "Intro",
-  paragraphs: [
-    "I'm Bart. I lead delivery at Planes, a London product studio, working across client projects in fintech, healthtech, and hospitality. On the side I build things — apps, websites, and AI tools — for myself and a small number of clients.",
-    "I'm drawn to small communities and the people who run them. I'm interested in how AI is shifting what one person can build, and I like making useful things that start simple and stay that way.",
-    "Currently taking on 1–2 small projects per quarter.",
-  ],
 } as const;
 
 export const now = {
@@ -46,7 +43,7 @@ export const work: { heading: string; items: WorkItem[] } = {
       title: "Run Club Coach App",
       year: "2025",
       description:
-        "Coaching app for community run clubs, built solo, used by a London running community.",
+        "A coaching app for community run clubs. Built solo. Helps run leaders plan sessions, track member attendance, and share routes. Used by a London running community.",
     },
     {
       title: "Spanish Learning App",

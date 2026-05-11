@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     port: Number(process.env.PORT) || 3000,
   },
-  plugins: [tailwindcss(), tanstackStart(), viteReact()],
+  plugins: [tailwindcss(), tanstackStart({ target: "vercel" }), viteReact()],
 });

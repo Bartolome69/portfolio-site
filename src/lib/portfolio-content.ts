@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Bart Etcheverry",
-  title: "Bart Etcheverry — Delivery Lead & Independent Builder",
+  title: "Bart Etcheverry — Product Delivery Lead & Independent Builder",
   description:
-    "Delivery lead at Planes, a London product studio. Independent builder of apps, websites, and AI tools.",
+    "Product delivery lead at Planes, a London product studio. Fifteen years building digital products. Specialist in AI workflows, agentic coding, and rapid prototyping.",
   url: "https://bartetcheverry.com",
   email: "bart@bartetcheverry.com",
   linkedin: "https://linkedin.com/in/bartetcheverry",
@@ -11,7 +11,7 @@ export const siteConfig = {
 
 export const bio = {
   tagline:
-    "Delivery lead at Planes.\nIndependent builder.\nLondon · New Zealand.",
+    "Product delivery lead at Planes.\nIndependent builder.\nLondon · New Zealand.",
 } as const;
 
 export const intro = {
@@ -23,8 +23,8 @@ export const now = {
   heading: "Now",
   subheading: "May 2026",
   items: [
-    "Building a coach app for community run clubs",
-    "Working on a Spanish learning app focused on conversation rather than drills",
+    "Building Daash — an AI running coach that adapts your training week-to-week",
+    "Building Hablaba — Spanish conversation practice for parents and learners past Duolingo",
     "Leading delivery on a healthtech subscription product at Planes",
     "Reading more, posting less",
   ],
@@ -34,28 +34,31 @@ export interface WorkItem {
   title: string;
   year: string;
   description: string;
+  url?: string;
 }
 
 export const work: { heading: string; items: WorkItem[] } = {
   heading: "Selected work",
   items: [
     {
-      title: "Run Club Coach App",
+      title: "Daash",
       year: "2025",
+      url: "https://daash.run",
       description:
-        "A coaching app for community run clubs. Built solo. Helps run leaders plan sessions, track member attendance, and share routes. Used by a London running community.",
+        "An AI running coach that lives in your chat. Tell Baz how you're feeling and the week refreshes around you — structured intervals sync straight to your Garmin. Built solo.",
     },
     {
-      title: "Spanish Learning App",
+      title: "Hablaba",
       year: "2025",
+      url: "https://spanishroutine.com",
       description:
-        "Spaced repetition for vocabulary built around real conversations.",
+        "Spanish conversation practice for parents raising bilingual children and learners past Duolingo. Five-minute daily sessions, real parenting phrases, gentle corrections without flashcards.",
     },
     {
-      title: "Delivery lead, Planes",
+      title: "Product delivery lead, Planes",
       year: "2022–present",
       description:
-        "Leading delivery on subscription healthtech, members-club mobile apps, analytics instrumentation.",
+        "Leading delivery on subscription healthtech, members-club mobile apps, and analytics instrumentation across client projects.",
     },
   ],
 } as const;
@@ -63,7 +66,7 @@ export const work: { heading: string; items: WorkItem[] } = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "I've spent the past four years leading delivery at Planes across fintech, healthtech, and hospitality products. Before that I worked in operations and project management in Auckland and Melbourne. I'm a New Zealand citizen, based in London since 2019, and I run with a club in Hackney most weekends.",
+    "Fifteen years in digital — the past four leading delivery at Planes across fintech, healthtech, and hospitality products. Before that, operations and project management roles in Auckland and Melbourne. New Zealand citizen, based in London since 2019, running with a club in Hackney most weekends.",
   ],
 } as const;
 
@@ -86,7 +89,7 @@ export const jsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   email: `mailto:${siteConfig.email}`,
-  jobTitle: "Delivery Lead",
+  jobTitle: "Product Delivery Lead",
   worksFor: {
     "@type": "Organization",
     name: "Planes",

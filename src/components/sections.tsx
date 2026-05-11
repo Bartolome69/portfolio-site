@@ -40,7 +40,7 @@ export function IntroSection() {
         {intro.greeting}
       </h2>
       <p className="text-[15px] leading-relaxed text-ink/90">
-        I'm Bart. I lead delivery at{" "}
+        I'm Bart. I'm product delivery lead at{" "}
         <a
           href="https://planes.agency"
           target="_blank"
@@ -50,12 +50,20 @@ export function IntroSection() {
           Planes
         </a>
         , a London product studio, working across client projects in fintech,
-        healthtech, and hospitality. On the side I build things — apps,
-        websites, and AI tools — for myself and a small number of clients.
+        healthtech, and hospitality. Fifteen years building and rebuilding
+        digital products — from 0 to 1 launches to existing product
+        transformations.
       </p>
       <p className="text-[15px] leading-relaxed text-ink/90">
-        I'm interested in software for small communities, tools that help teams
-        ship faster, and how AI is changing what one person can build. New
+        I combine delivery expertise with product thinking to ship high-impact
+        work. Day to day that means leading teams through complexity, turning
+        ambitious ideas into functioning products with a data-first approach.
+        Lately a lot of that is AI workflows, agentic coding, and rapid
+        prototyping — figuring out what one person, or one small team, can
+        build now that wasn't possible a year ago.
+      </p>
+      <p className="text-[15px] leading-relaxed text-ink/90">
+        On the side I build for myself and a small number of clients. New
         Zealand citizen, London-based, runs with a club somewhere in zone 2.
       </p>
       <p className="text-[15px] leading-relaxed text-ink/90">
@@ -96,7 +104,18 @@ export function WorkSection() {
           <div key={i} className="py-5 first:pt-0">
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-serif-display text-[15px] font-medium tracking-tight">
-                {item.title}
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-3 decoration-ink/30 hover:decoration-ink transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
               </h3>
               <span className="text-xs text-ink-muted tabular-nums flex-shrink-0">
                 {item.year}

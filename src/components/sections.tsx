@@ -1,0 +1,121 @@
+import {
+  intro,
+  now,
+  work,
+  about,
+  contact,
+  siteConfig,
+} from "~/lib/portfolio-content";
+
+function SectionHeading({
+  id,
+  children,
+}: {
+  id: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div id={id} className="scroll-mt-24">
+      <h2 className="font-serif-display text-lg tracking-tight text-ink mb-8 pb-3 border-b border-rule">
+        {children}
+      </h2>
+    </div>
+  );
+}
+
+export function IntroSection() {
+  return (
+    <section className="space-y-4">
+      <SectionHeading id="intro">{intro.heading}</SectionHeading>
+      {intro.paragraphs.map((p, i) => (
+        <p key={i} className="text-[15px] leading-relaxed text-ink/90">
+          {p}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+export function NowSection() {
+  return (
+    <section className="space-y-4">
+      <SectionHeading id="now">{now.heading}</SectionHeading>
+      <p className="text-xs uppercase tracking-widest text-ink-muted -mt-2 mb-3">
+        {now.subheading}
+      </p>
+      <ul className="space-y-2.5">
+        {now.items.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-ink/90">
+            <span className="mt-2 size-1.5 rounded-full bg-accent flex-shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function WorkSection() {
+  return (
+    <section className="space-y-0">
+      <SectionHeading id="work">{work.heading}</SectionHeading>
+      <div className="divide-y divide-rule -mt-2">
+        {work.items.map((item, i) => (
+          <div key={i} className="py-5 first:pt-0">
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="font-serif-display text-[15px] font-medium tracking-tight">
+                {item.title}
+              </h3>
+              <span className="text-xs text-ink-muted tabular-nums flex-shrink-0">
+                {item.year}
+              </span>
+            </div>
+            <p className="text-sm text-ink-muted mt-1 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function AboutSection() {
+  return (
+    <section className="space-y-4">
+      <SectionHeading id="about">{about.heading}</SectionHeading>
+      {about.paragraphs.map((p, i) => (
+        <p key={i} className="text-[15px] leading-relaxed text-ink/90">
+          {p}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+export function ContactSection() {
+  return (
+    <section className="space-y-4">
+      <SectionHeading id="contact">{contact.heading}</SectionHeading>
+      <p className="text-[15px] leading-relaxed text-ink/90">
+        {contact.body}
+      </p>
+      <div className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
+        <a
+          href={`mailto:${siteConfig.email}`}
+          className="text-accent underline underline-offset-3 decoration-accent/40 hover:decoration-accent transition-colors"
+        >
+          {siteConfig.email}
+        </a>
+        <a
+          href={siteConfig.calLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent underline underline-offset-3 decoration-accent/40 hover:decoration-accent transition-colors"
+        >
+          Book a 15-minute call
+        </a>
+      </div>
+    </section>
+  );
+}

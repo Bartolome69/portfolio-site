@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-display: "Fraunces", serif;
+  --font-sans-text: "Inter", sans-serif;
+
+  --color-paper: oklch(0.97 0.005 80);
+  --color-ink: oklch(0.18 0.01 260);
+  --color-ink-muted: oklch(0.45 0.01 260);
+  --color-rule: oklch(0.88 0.005 80);
+  --color-accent: oklch(0.42 0.04 250);
+  --color-secondary: oklch(0.94 0.005 80);
+}
+
+html {
+  font-family: var(--font-sans-text);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: oklch(0.42 0.04 250 / 0.15);
+}

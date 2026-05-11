@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { siteConfig, jsonLd } from "~/lib/portfolio-content";
+import { PostHogProvider } from "~/lib/posthog";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -48,6 +49,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-paper text-ink antialiased">
+        <PostHogProvider />
         {children}
         <Scripts />
       </body>

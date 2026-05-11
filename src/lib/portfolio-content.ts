@@ -66,7 +66,7 @@ export const work: { heading: string; items: WorkItem[] } = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "Fifteen years in digital — the past four leading delivery at Planes across fintech, healthtech, and hospitality products. Before that, operations and project management roles in Auckland and Melbourne. New Zealand citizen, based in London since 2019, running with a club in Hackney most weekends.",
+    "Fifteen years in digital — the past two leading delivery at Planes across fintech, healthtech, and hospitality products. Before that, digital delivery and product roles in Auckland. New Zealand citizen, based in London since 2019. On the weekends you'll catch me running sub-3 hour marathons or cycling through the forest.",
   ],
 } as const;
 

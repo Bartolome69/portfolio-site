@@ -55,10 +55,10 @@ export const work: { heading: string; items: WorkItem[] } = {
         "Spanish conversation practice for parents raising bilingual children and learners past Duolingo. Five-minute daily sessions, real parenting phrases, gentle corrections without flashcards.",
     },
     {
-      title: "Product delivery lead, Planes",
+      title: "Product Delivery Lead, Planes",
       year: "2022–present",
       description:
-        "Leading delivery on subscription healthtech, members-club mobile apps, and analytics instrumentation across client projects.",
+        "Leading delivery on subscription healthtech, members-club mobile apps, and delivery-led growth across client projects.",
     },
   ],
 } as const;
